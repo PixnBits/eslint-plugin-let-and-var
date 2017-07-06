@@ -1,22 +1,33 @@
 {
   "name": "eslint-plugin-let-and-var",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Use block scopes and let while retaining function scopes and var",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "let is the new var",
+    "no-var",
+    "let",
+    "var",
+    "function scope",
+    "block scope"
   ],
   "author": "pixnbits",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test:lint": "eslint .",
+    "test:unit": "mocha tests --recursive",
+    "test": "npm run test:unit && npm run test:lint"
   },
   "dependencies": {
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": ">=3.0.0 || >=4.0.0",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-let-and-var": "./",
     "mocha": "^3.1.2"
   },
   "engines": {

@@ -43,6 +43,7 @@ Then configure the rules you want to use under the rules section.
 {
     "rules": {
         "prefer-const": 2,
+        "no-var": 0,
         "let-and-var/scopes": 2
     }
 }

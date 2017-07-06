@@ -1,5 +1,3 @@
-'use strict';
-
 const rule = require('../../../lib/rules/scopes');
 const RuleTester = require('eslint').RuleTester;
 
@@ -123,7 +121,7 @@ ruleTester.run('scopes', rule, {
 
       console.log(a);
     }
-    `
+    `,
   ],
 
   invalid: [
@@ -133,7 +131,7 @@ ruleTester.run('scopes', rule, {
           let f = 1;
         }
       `,
-      errors: [ { message: `'let' used outside of block scope` } ]
+      errors: [{ message: '"let" used outside of block scope' }],
     },
     {
       code: `
@@ -145,7 +143,7 @@ ruleTester.run('scopes', rule, {
           return f;
         }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
+      errors: [{ message: '"var" used outside of function scope' }],
     },
 
     // https://davidwalsh.name/for-and-against-let
@@ -162,7 +160,7 @@ ruleTester.run('scopes', rule, {
         console.log( bam );
       }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
+      errors: [{ message: '"var" used outside of function scope' }],
     },
     {
       code: `
@@ -170,7 +168,7 @@ ruleTester.run('scopes', rule, {
           // ..
         }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
+      errors: [{ message: '"var" used outside of function scope' }],
     },
     {
       code: `
@@ -187,7 +185,7 @@ ruleTester.run('scopes', rule, {
           }
         }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
+      errors: [{ message: '"var" used outside of function scope' }],
     },
     {
       code: `
@@ -205,7 +203,7 @@ ruleTester.run('scopes', rule, {
           console.log( b );       // ReferenceError: \`b\` is not defined
         }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
+      errors: [{ message: '"var" used outside of function scope' }],
     },
     {
       code: `
@@ -219,7 +217,7 @@ ruleTester.run('scopes', rule, {
             }
         }
       `,
-      errors: [ { message: `'var' used outside of function scope` } ]
-    }
-  ]
+      errors: [{ message: '"var" used outside of function scope' }],
+    },
+  ],
 });
