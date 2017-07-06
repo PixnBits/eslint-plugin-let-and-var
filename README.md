@@ -1,6 +1,12 @@
 # eslint-plugin-let-and-var
 
-Use block scopes and let while retaining function scopes and var
+Use block scopes and `let` while retaining function scopes and `var`.
+
+Useful in retaining a function-first methodology in reasoning while keeping the strengths of `let`: while functions can be considered a type of block scope there is power in thinking in functions over blocks (ex: [Array.prototype methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype#Methods)).
+
+See [For and against `let`](https://davidwalsh.name/for-and-against-let) for other arguments and details.
+
+Couple this with [prefer-const](http://eslint.org/docs/rules/prefer-const). This is an alternative to the (extreme) [no-var](http://eslint.org/docs/rules/no-var).
 
 ## Installation
 
@@ -20,7 +26,7 @@ $ npm install eslint-plugin-let-and-var --save-dev
 
 ## Usage
 
-Add `let-and-var` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `let-and-var` to the plugins section of your [`.eslintrc.*`](http://eslint.org/docs/user-guide/configuring#configuration-file-formats) configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
@@ -36,16 +42,14 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "let-and-var/rule-name": 2
+        "prefer-const": 2,
+        "let-and-var/scopes": 2
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+* scopes
 
-
-
-
-
+    Use `let` in block scopes and `var` in function scopes.
