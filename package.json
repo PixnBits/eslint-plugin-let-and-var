@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-let-and-var",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Use block scopes and let while retaining function scopes and var",
   "keywords": [
     "eslint",
@@ -24,7 +24,7 @@
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-let-and-var": "./",
