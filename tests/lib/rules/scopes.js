@@ -25,6 +25,13 @@ ruleTester.run('scopes', rule, {
       s += 1;
     }
     `,
+    // Parsing error: 'import' and 'export' may appear only with 'sourceType: module'
+    // need a way to test 'module' scope
+    // `
+    // import fs from 'fs';
+    //
+    // var m = 0;
+    // `,
 
     // https://davidwalsh.name/for-and-against-let
     `
@@ -131,7 +138,7 @@ ruleTester.run('scopes', rule, {
           let f = 1;
         }
       `,
-      errors: [{ message: '"let" used outside of block scope' }],
+      errors: [{ message: '"let" used outside of block scope (saw in function)' }],
     },
     {
       code: `
@@ -143,7 +150,7 @@ ruleTester.run('scopes', rule, {
           return f;
         }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
 
     // https://davidwalsh.name/for-and-against-let
@@ -160,7 +167,7 @@ ruleTester.run('scopes', rule, {
         console.log( bam );
       }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
     {
       code: `
@@ -168,7 +175,7 @@ ruleTester.run('scopes', rule, {
           // ..
         }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
     {
       code: `
@@ -185,7 +192,7 @@ ruleTester.run('scopes', rule, {
           }
         }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
     {
       code: `
@@ -203,7 +210,7 @@ ruleTester.run('scopes', rule, {
           console.log( b );       // ReferenceError: \`b\` is not defined
         }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
     {
       code: `
@@ -217,7 +224,7 @@ ruleTester.run('scopes', rule, {
             }
         }
       `,
-      errors: [{ message: '"var" used outside of function scope' }],
+      errors: [{ message: '"var" used outside of function scope (saw in block)' }],
     },
   ],
 });

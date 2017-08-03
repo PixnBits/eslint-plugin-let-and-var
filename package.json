@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-let-and-var",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Use block scopes and let while retaining function scopes and var",
   "keywords": [
     "eslint",
